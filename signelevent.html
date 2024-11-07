@@ -14,6 +14,7 @@
         <header>التسجيل</header>
 
         <form id="signup-form">
+            <!-- حقل البريد الإلكتروني -->
             <div class="field email">
                 <div class="input-area">
                     <i class="icon fas fa-envelope"></i>
@@ -23,6 +24,7 @@
                 <div class="error error-txt"></div>
             </div>
 
+            <!-- حقل رقم الهاتف -->
             <div class="field phone">
                 <div class="input-area">
                     <i class="icon fas fa-phone-alt"></i>
@@ -32,6 +34,29 @@
                 <div class="error error-txt"></div>
             </div>
 
+            
+
+            <!-- حقل المستوى التعليمي -->
+            <div class="field education-level">
+                <div class="input-area">
+                    <i class="icon fas fa-school"></i>
+                    <select id="education-level" required>
+                        <option value="" disabled selected>اختر المستوى التعليمي</option>
+                        <option value="Elementary">ابتدائي</option>
+                        <option value="Middle 1">السنة 1 متوسط</option>
+                        <option value="Middle 2">السنة 2 متوسط</option>
+                        <option value="Middle 3">السنة 3 متوسط</option>
+                        <option value="BEAM">بيام</option>
+                        <option value="Secondary 1">السنة 1 ثانوي</option>
+                        <option value="Secondary 2">السنة 2 ثانوي</option>
+                        <option value="Baccalaureate">بكالوريا</option>
+                    </select>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل كلمة المرور -->
             <div class="field password">
                 <div class="input-area">
                     <i class="icon fas fa-lock"></i>
@@ -41,6 +66,7 @@
                 <div class="error error-txt"></div>
             </div>
 
+            <!-- حقل تأكيد كلمة المرور -->
             <div class="field confirm-password">
                 <div class="input-area">
                     <i class="icon fas fa-lock"></i>
@@ -50,14 +76,7 @@
                 <div class="error error-txt"></div>
             </div>
 
-            <div class="field file-upload">
-                <div class="input-area">
-                    <i class="icon fas fa-upload"></i>
-                    <input type="file" id="cv" required>
-                    <i class="error error-icon fas fa-exclamation-circle"></i>
-                </div>
-                <div class="error error-txt">الرجاء رفع السيرة الذاتية بصيغة PDF أو Word</div>
-            </div>
+           
 
             <input type="submit" value="التسجيل">
 

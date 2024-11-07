@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل جديد</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .register-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #5c6bc0;
+      margin-bottom: 25px;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1em;
+      color: #333;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus,
+    input[type="file"]:focus {
+      border-color: #5c6bc0;
+    }
+
+    .error-message {
+      color: #f44336;
+      font-size: 0.9em;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3f4a7a;
+    }
+
+    .file-upload {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1em;
+      width: 100%;
+    }
+
+    .file-upload:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>تسجيل جديد</h2>
+    <form id="registerForm">
+      <!-- البريد الإلكتروني -->
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+        <p class="error-message" id="emailError">الرجاء إدخال بريد إلكتروني صحيح</p>
+      </div>
+
+      <!-- تأكيد البريد الإلكتروني -->
+      <div class="form-group">
+        <label for="confirmEmail">تأكيد البريد الإلكتروني</label>
+        <input type="email" id="confirmEmail" name="confirmEmail" placeholder="أعد إدخال بريدك الإلكتروني" required>
+        <p class="error-message" id="confirmEmailError">البريد الإلكتروني غير متطابق</p>
+      </div>
+
+      <!-- كلمة المرور -->
+      <div class="form-group">
+        <label for="password">كلمة المرور</label>
+        <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+      </div>
+
+      <!-- تأكيد كلمة المرور -->
+      <div class="form-group">
+        <label for="confirmPassword">تأكيد كلمة المرور</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="أعد إدخال كلمة المرور" required>
+        <p class="error-message" id="passwordError">كلمة المرور غير متطابقة</p>
+      </div>
+
+      <!-- رقم الهاتف -->
+      <div class="form-group">
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" id="phone" name="phone" placeholder="أدخل رقم الهاتف" required>
+      </div>
+
+      <!-- رفع السيرة الذاتية -->
+      <div class="form-group">
+        <label for="fileUpload">رفع السيرة الذاتية</label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .doc, .docx, .jpg, .jpeg" required>
+      </div>
+
+      <button type="submit">تسجيل</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // التحقق من البريد الإلكتروني
+      const email = document.getElementById("email").value;
+      const confirmEmail = document.getElementById("confirmEmail").value;
+      const emailError = document.getElementById("emailError");
+      const confirmEmailError = document.getElementById("confirmEmailError");
+
+      if (email !== confirmEmail) {
+        confirmEmailError.style.display = "block";
+      } else {
+        confirmEmailError.style.display = "none";
+      }
+
+      // التحقق من كلمة المرور
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const passwordError = document.getElementById("passwordError");
+
+      if (password !== confirmPassword) {
+        passwordError.style.display = "block";
+      } else {
+        passwordError.style.display = "none";
+      }
+
+      // إذا كانت جميع القيم صحيحة
+      if (email === confirmEmail && password === confirmPassword) {
+        alert("تم التسجيل بنجاح!");
+      }
+    });
+  </script>
+
+</body>
+</html>
+

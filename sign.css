@@ -1,4 +1,4 @@
-/* خلفية الصفحة المتحركة */
+/* تنسيق خلفية الصفحة المتحركة */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
@@ -19,6 +19,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* تنسيق الإطار العام */
 .wrapper {
     width: 320px;
     padding: 20px;
@@ -26,7 +27,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
-    text-align: center; /* لضبط المحتوى في وسط الإطار */
+    text-align: center;
 }
 
 header {
@@ -37,6 +38,7 @@ header {
     text-align: center;
 }
 
+/* تنسيق الحقول */
 .field {
     position: relative;
     margin-bottom: 15px;
@@ -44,32 +46,32 @@ header {
 
 .input-area {
     display: flex;
-    align-items: center; /* مركز الأيقونات مع الحقول */
+    align-items: center;
 }
 
-.input-area input[type="text"],
-.input-area input[type="password"] {
-    flex: 1; /* يجعل المدخل يشغل المساحة المتبقية */
-    padding: 12px;
+.input-area input[type="email"],
+.input-area input[type="tel"],
+.input-area input[type="password"],
+.input-area input[type="file"] {
+    flex: 1;
+    padding: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
     font-size: 16px;
     transition: all 0.3s ease;
-    margin-left: 10px; /* مسافة بين الأيقونة والنص */
+    margin-left: 10px;
 }
 
+/* تنسيق الأيقونة */
 .icon {
     color: #999;
-    margin-right: 10px; /* مسافة بين الأيقونة والنص */
+    margin-right: 10px;
 }
 
+/* تنسيقات الأخطاء */
 .error {
     border-color: red;
-}
-
-.valid {
-    border-color: green;
 }
 
 .error-txt {
@@ -78,9 +80,27 @@ header {
     margin-top: 5px;
 }
 
+/* تنسيق حقل رفع الملف */
+.field.file-upload .input-area {
+    display: flex;
+    align-items: center;
+}
+
+.field.file-upload .input-area input[type="file"] {
+    flex: 1;
+    width: 20px;
+    padding:  8px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* تنسيق زر الإرسال */
 input[type="submit"] {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background-color: #007bff;
     border: none;
     border-radius: 5px;
@@ -95,6 +115,7 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* تنسيق النص أسفل النموذج */
 .sign-txt {
     text-align: center;
     margin-top: 10px;
@@ -108,4 +129,117 @@ input[type="submit"]:hover {
 
 .sign-txt a:hover {
     text-decoration: underline;
+}
+.field select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.field select:focus {
+    border-color: #007bff;
+}
+
+.field .icon {
+    color: #999;
+    margin-right: 10px;
+}
+
+.error {
+    border-color: red;
+}
+
+.error-txt {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+
+.quick-registration {
+    background: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.quick-registration .section-title h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.quick-registration .section-title p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1em;
+    color: #777;
+}
+
+.cta {
+    margin-top: 40px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cta .btn {
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta .btn:hover {
+    background-color: #0056b3;
 }

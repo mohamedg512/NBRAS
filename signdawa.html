@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل</title>
+    <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>التسجيل</header>
+
+        <form id="signup-form">
+            <!-- حقل البريد الإلكتروني -->
+            <div class="field email">
+                <div class="input-area">
+                    <i class="icon fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل رقم الهاتف -->
+            <div class="field phone">
+                <div class="input-area">
+                    <i class="icon fas fa-phone-alt"></i>
+                    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل الدولة -->
+            <div class="field country">
+                <div class="input-area">
+                    <i class="icon fas fa-globe"></i>
+                    <select id="country" required>
+                        <option value="" disabled selected>اختر الدولة</option>
+                        <option value="Algeria">الجزائر</option>
+                        <option value="Morocco">المغرب</option>
+                        <option value="Tunisia">تونس</option>
+                        <option value="Egypt">مصر</option>
+                        <option value="Saudi Arabia">السعودية</option>
+                        <option value="UAE">الإمارات</option>
+                        <!-- يمكن إضافة المزيد من الدول حسب الحاجة -->
+                    </select>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+           
+
+            <!-- حقل اختيار الدورة -->
+            <div class="field course">
+                <div class="input-area">
+                    <i class="icon fas fa-book-open"></i>
+                    <select id="course" required>
+                        <option value="" disabled selected>اختر الدورة</option>
+                        <option value="cooking">دورة الطهي الاحترافي</option>
+                        <option value="graphic-design">دورة تصميم الجرافيك</option>
+                        <option value="web-development">دورة تطوير المواقع الإلكترونية</option>
+                        <option value="programming">دورة البرمجة الأساسية</option>
+                        <option value="digital-marketing">دورة التسويق الرقمي</option>
+                        <option value="quran">دورة تعليم القرآن الكريم</option>
+                        <option value="advanced-reading">دورة القراءة المتقدمة</option>
+                        <option value="creative-writing">دورة الكتابة الإبداعية</option>
+                    </select>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل كلمة المرور -->
+            <div class="field password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <!-- حقل تأكيد كلمة المرور -->
+            <div class="field confirm-password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="confirm-password" placeholder="تأكيد كلمة المرور" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            
+
+            <input type="submit" value="التسجيل">
+
+            <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script> <!-- رابط ملف JavaScript -->
+</body>
+
+</html>
