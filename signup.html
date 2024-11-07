@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="sign.css"> <!-- Link to Sign Up CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>Sign Up</header>
+
+        <form id="signup-form">
+            <div class="field email">
+                <div class="input-area">
+                    <i class="icon fas fa-envelope"></i>
+                    <input type="text" id="email" placeholder="Email" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <div class="field confirm-password">
+                <div class="input-area">
+                    <i class="icon fas fa-lock"></i>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt"></div>
+            </div>
+
+            <input type="submit" value="Register">
+
+            <div class="sign-txt">Already have an account? <a href="index1.html">Login</a></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript for Sign Up -->
+</body>
+
+</html>

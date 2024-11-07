@@ -1,0 +1,52 @@
+.container1 {
+    width: 100%;
+    padding: 20px; /* قلل المسافة لزيادة التناسق على الشاشات الصغيرة */
+    box-sizing: border-box;
+}
+
+.gallery {
+    display: grid;
+    gap: 20px; /* قلل المسافة على الشاشات الصغيرة */
+}
+
+/* إعداد العرض الافتراضي للأعمدة */
+.gallery img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+/* شاشات أكبر من 1024 بكسل */
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+    }
+}
+
+/* شاشات من 768 إلى 1024 بكسل */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+    }
+}
+
+/* شاشات من 480 إلى 768 بكسل */
+@media (min-width: 480px) and (max-width: 767px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* عمودان */
+    }
+}
+
+/* شاشات أصغر من 480 بكسل */
+@media (max-width: 479px) {
+    .gallery {
+        grid-template-columns: 1fr; /* عمود واحد */
+    }
+}
