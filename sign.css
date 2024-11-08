@@ -162,84 +162,60 @@ input[type="submit"]:hover {
 }
 
 
-
-.quick-registration {
-    background: #f9f9f9;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.quick-registration .section-title h2 {
-    font-size: 2em;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-.quick-registration .section-title p {
-    font-size: 1.1em;
+/* تصميم عنوان حقل المواد */
+.subjects-label {
+    font-size: 1em; /* تقليل حجم النص */
+    font-weight: bold;
+    margin-bottom: 8px; /* تقليل المسافة السفلية */
     color: #333;
-    margin-bottom: 40px;
+    display: block;
 }
 
-.steps {
+/* تصميم حاوية المواد */
+.subjects-list {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 250px; /* تحديد العرض الكلي للحقل */
+    margin: 0 auto; /* توسيط الحقل */
 }
 
-.step {
-    width: 300px;
-    margin: 20px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+
+/* تصميم عنصر المادة */
+.subject-item {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* تقليل المسافة بين مربع الاختيار والتسمية */
+}
+
+/* تصميم مربع الاختيار */
+.subject-item input[type="checkbox"] {
+    width: 16px; /* تقليل حجم مربع الاختيار */
+    height: 16px; /* تقليل حجم مربع الاختيار */
+    accent-color: #4CAF50; /* لون مربع الاختيار */
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.step:hover {
-    transform: translateY(-10px);
+/* تصميم التسمية الخاصة بالمادة */
+.subject-item label {
+    font-size: 0.9em; /* تقليل حجم النص */
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.step i {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 15px;
+/* تأثير عند وضع الفأرة */
+.subject-item:hover label {
+    color: #4CAF50; /* تغيير اللون عند مرور الفأرة */
 }
 
-.step h3 {
-    font-size: 1.3em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.step p {
-    font-size: 1em;
-    color: #777;
-}
-
-.cta {
-    margin-top: 40px;
-}
-
-.cta p {
-    font-size: 1.2em;
-    color: #333;
-}
-
-.cta .btn {
-    padding: 12px 30px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.cta .btn:hover {
-    background-color: #0056b3;
+/* تأثير عند التركيز */
+.subject-item input[type="checkbox"]:focus-visible {
+    outline: 1px solid #4CAF50; /* تقليل سماكة التركيز */
+    outline-offset: 2px;
 }

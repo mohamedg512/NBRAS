@@ -52,3 +52,8 @@ document.getElementById('signup-form').addEventListener('submit', function(event
         alert('Registration successful!'); // هنا يمكنك استبدال التنبيه بإجراء آخر
     }
 });
+function toggleMenu() {
+    const mainNav = document.querySelector('.main-nav');
+    mainNav.classList.toggle('active');
+  }
+  

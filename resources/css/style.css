@@ -152,13 +152,20 @@ h1, h2, h3 {
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../img/BG.png);
     height: 100vh;
     background-size: cover;
-  }
+    background-attachment: fixed;
+  } 
+
+
+ 
+
+
   .hero-text-box{
     width: 1140px;
     top: 40%;
     left: 60%;
     transform: translate(-60%, -60%);
     position: absolute;
+    
   }
   .logo{
     width: 110px;
@@ -185,207 +192,231 @@ h1, h2, h3 {
     color: #2c6bbd;
     margin-bottom: 15px;
   }
-  /* -------------------------------------------------------------- */
-  /* MEDIA QUERIES */
-  /* -------------------------------------------------------------- */
-  
-  /* For small mobile devices (e.g., iPhone SE, iPhone XR, iPhone 12 Pro) */
-  @media (max-width: 600px) {
-    .hero-text-box {
-      width: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      top: 35%; /* تعديل الموقع العلوي */
-    }
-    
-    .text {
-      width: 90%;
-    }
-    
-    .cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .card {
-      width: 90%;
-      margin-bottom: 20px;
-    }
-  
-    .main-nav {
-      float: none;
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    .main-nav li {
-      display: block; /* عرض العناصر بشكل أفقي */
-      margin: 5px 10px; /* تباعد بين العناصر */
-      border-bottom: 2px solid transparent; /* تحديد خط سفلي بعرض صغير */
-    }
-  
-    .main-nav li a {
-      font-size: 85%;
-      display: block; /* تصغير حجم النص */
-    }
-  
-    /* تحديد عرض الخطوط السفلية أسفل الكلمات */
-    .main-nav li:hover {
-      border-bottom: 2px solid #2c6bbd;
-      width: auto; /* عرض الخط فقط بحجم الكلمة */
-    }
-  }
-  
-  /* For larger mobile devices */
-  @media (min-width: 601px) and (max-width: 767px) {
-    .hero-text-box {
-      width: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-    .text {
-      width: 90%;
-    }
-    
-    .cards {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .card {
-      width: 80%;
-      margin-bottom: 20px;
-    }
-  
-    .main-nav {
-      float: none;
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    .main-nav li {
-      display: inline-block;
-      margin: 10px 5px;
-      border-bottom: 2px solid transparent;
-    }
-  
-    .main-nav li a {
-      font-size: 90%;
-    }
-  
-    .main-nav li:hover {
-      border-bottom: 2px solid #2c6bbd;
-      width: auto;
-    }
-  }
-  
-  /* For tablets */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .hero-text-box {
-      width: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-    .text {
-      width: 80%;
-    }
-    
-    .cards {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  
-    .card {
-      width: 45%;
-    }
-  
-    .main-nav li {
-      border-bottom: 2px solid transparent;
-    }
-  
-    .main-nav li a {
-      font-size: 90%;
-    }
-  }
-  
-  /* For larger screens */
-  @media (min-width: 1025px) {
-    .hero-text-box {
-      width: 70%;
-    }
-  
-    .card {
-      width: 30%;
-    }
-  
-    .main-nav li {
-      border-bottom: 3px solid transparent;
-    }
-  
-    .main-nav li a {
-      font-size: 100%;
-    }
-  }
-  /* إخفاء القائمة المنسدلة وأيقونة الهامبرغر على الشاشات الكبيرة */
+  /* ---------------------------------------------------------------- */
+/* تحسين مظهر الهامبرغر والقائمة المنسدلة عند الضغط عليها */
+/* ---------------------------------------------------------------- */
+
+/* إخفاء القائمة المنسدلة وأيقونة الهامبرغر على الشاشات الكبيرة */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* جعل القائمة مخفية افتراضيًا على الهواتف */
+.main-nav {
+  display: flex;
+}
+
+/* تنسيقات لشاشات الهواتف */
+@media (max-width: 767px) {
+  /* إظهار أيقونة الهامبرغر على الشاشات الصغيرة */
   .hamburger {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     font-size: 30px;
     cursor: pointer;
-    color: #555;
-  }
-  
-  /* جعل القائمة مخفية افتراضيًا على الهواتف */
-  .main-nav {
-    display: flex;
-  }
-  
-  /* تنسيقات لشاشات الهواتف */
-  @media (max-width: 767px) {
-    /* إظهار أيقونة الهامبرغر على الشاشات الصغيرة */
-    .hamburger {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-  
-    /* إخفاء القائمة افتراضيًا في شاشات الهواتف */
-    .main-nav {
-      display: none;
-      position: absolute;
-      top: 60px; /* أسفل الأيقونة */
-      right: 20px;
-      background-color: #fff;
-      width: 200px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      list-style: none;
-      padding: 10px;
-      text-align: right;
-    }
-  
-    /* إظهار القائمة عند التفعيل */
-    .main-nav.active {
-      display: block;
-    }
-  
-    .main-nav li {
-      margin: 10px 0;
-    }
-  
-    .main-nav li a {
-      font-size: 100%;
-      color: #555;
-      text-decoration: none;
-    }
-  
-    .main-nav li a:hover {
-      color: #2c6bbd;
-    }
+    color: #333; /* لون الهامبرغر */
   }
 
+  /* إخفاء القائمة افتراضيًا في شاشات الهواتف */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px; /* أسفل الأيقونة */
+    right: 20px;
+    background-color: #f9f9f9; /* لون خلفية هادئ */
+    width: 250px; /* عرض أكبر قليلاً */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    border-radius: 10px; /* حواف مستديرة */
+    padding: 20px;
+    text-align: right;
+    z-index: 1000;
+    list-style: none;
+    transform: translateX(100%); /* البداية مخفية (إلى اليمين) */
+    transition: transform 0.3s ease-in-out; /* تأثير انزلاق */
+  }
+
+  /* عند تفعيل القائمة (عند الضغط على الهامبرغر) */
+  .main-nav.active {
+    display: block;
+    transform: translateX(0); /* إظهار القائمة */
+  }
+
+  /* تنسيق الروابط داخل القائمة */
+  .main-nav li {
+    margin: 15px 0;
+  }
+
+  .main-nav li a {
+    font-size: 18px;
+    color: #333; /* لون نص هادئ */
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px; /* حواف مستديرة للرابط */
+    transition: background-color 0.3s, color 0.3s; /* تأثيرات عند التمرير */
+  }
+
+  /* تغيير اللون عند التمرير */
+  .main-nav li a:hover {
+    background-color: #2c6bbd; /* لون خلفية عند التمرير */
+    color: #fff; /* لون النص عند التمرير */
+  }
+
+  /* إضافة تأثير على الهامبرغر */
+  .hamburger:hover {
+    color: #2c6bbd;
+    transition: color 0.3s;
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* تنسيقات للشاشات الأخرى */
+/* ---------------------------------------------------------------- */
+
+/* For small mobile devices (e.g., iPhone SE, iPhone XR, iPhone 12 Pro) */
+@media (max-width: 600px) {
+  .hero-text-box {
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 35%; /* تعديل الموقع العلوي */
+  }
+
+  .text {
+    width: 90%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .main-nav {
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .main-nav li {
+    display: block; /* عرض العناصر بشكل أفقي */
+    margin: 5px 10px; /* تباعد بين العناصر */
+    border-bottom: 2px solid transparent; /* تحديد خط سفلي بعرض صغير */
+  }
+
+  .main-nav li a {
+    font-size: 85%;
+    display: block; /* تصغير حجم النص */
+  }
+
+  /* تحديد عرض الخطوط السفلية أسفل الكلمات */
+  .main-nav li:hover {
+    border-bottom: 2px solid #2c6bbd;
+    width: auto; /* عرض الخط فقط بحجم الكلمة */
+  }
+}
+
+/* For larger mobile devices */
+@media (min-width: 601px) and (max-width: 767px) {
+  .hero-text-box {
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text {
+    width: 90%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .main-nav {
+    float: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin: 10px 5px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .main-nav li a {
+    font-size: 90%;
+  }
+
+  .main-nav li:hover {
+    border-bottom: 2px solid #2c6bbd;
+    width: auto;
+  }
+}
+
+/* For tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-text-box {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .text {
+    width: 80%;
+  }
+
+  .cards {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .main-nav li {
+    border-bottom: 2px solid transparent;
+  }
+
+  .main-nav li a {
+    font-size: 90%;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1025px) {
+  .hero-text-box {
+    width: 70%;
+  }
+
+  .card {
+    width: 30%;
+  }
+
+  .main-nav li {
+    border-bottom: 3px solid transparent;
+  }
+
+  .main-nav li a {
+    font-size: 100%;
+  }
+}
 
 /* تنسيق الإطار الرئيسي */
 .container14 {
@@ -994,6 +1025,38 @@ box-shadow: 0 4px 12px rgba(0, 74, 173, 0.3); /* إضافة ظل خفيف */
   color: #007bff;
   font-weight: bold;
 }
+.feedback-form .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.feedback-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+.feedback-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
 
 .footer {
   background-color: #333;
@@ -1061,3 +1124,191 @@ box-shadow: 0 4px 12px rgba(0, 74, 173, 0.3); /* إضافة ظل خفيف */
 .social-icon:hover {
   color: #007bff;
 }
+
+/* تنسيق قسم من نحن */
+.about-section {
+  background-color: #f7f7f7;
+  padding: 40px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.contact-icons {
+  margin-top: 15px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #007bff;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icon:hover {
+  color: #0056b3;
+}
+.hero-text-box p{
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.founder-info {
+  margin-bottom: 15px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #007bff;
+}
+
+.footer-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.terms-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Cairo', sans-serif;
+}
+
+.terms-section h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.terms-section h2 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.terms-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.founder-info {
+  margin-bottom: 15px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #007bff;
+}
+
+.footer-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+.terms-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Cairo', sans-serif;
+}
+
+.terms-section h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.terms-section h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #007bff;
+}
+
+.terms-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.founder-info {
+  margin-bottom: 15px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-icon:hover {
+  color: #007bff;
+}
+
+.footer-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+

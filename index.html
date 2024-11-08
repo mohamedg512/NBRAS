@@ -22,15 +22,20 @@
               <img src="resources/img/0120.png" alt="site logo" class="logo">
               <ul class="main-nav">
                   <li><a href="logintmo.html">اشترك معنا</a></li>
-                  <li><a href="#">من نحن </a></li>
+                  <li><a href="hothis.html">من نحن </a></li>
                   <li><a href="logintmo.html">التسجيل</a></li>
+                  <li><a href="index1.html">تسجيل الدخول</a></li>
+
                   <li><a href="#courses">الدورات التعليمية </a></li>
-                  <li><a href="#">الشروط والأحكام </a></li>
+                  <li><a href="Conditions.html">الشروط والأحكام </a></li>
                   <li><a href="#">تبرع للمنصة</a></li>
+                  <li><a href="#footer">تواصل معنا</a></li>
               </ul>
-              
+    
               <div class="hamburger" onclick="toggleMenu()">☰</div>
           </div>
+              
+          </div>   
       </nav>
       <div class="hero-text-box">
         <h1> نبراس  نور العلم والمعرفة<br> في متناول يدك</h1>
@@ -144,7 +149,7 @@
             <!-- دورة تعليم القرآن الكريم -->
             <div class="course">
                 <img src="resources/img/011.png" alt="دورة تعليم القرآن الكريم">
-                <h3>دورة تعليم القرآن الكريم</h3>
+                <h3>دورة تعلم القرآن الكريم</h3>
                 <p>تعلم التلاوة والتفسير والتجويد، مع دروس مكثفة في حفظ القرآن الكريم.</p>
                 <a href="#" class="price-btn">0 دج</a> <!-- السعر كزر مع رابط إلى صفحة الدفع -->
             </div>
@@ -264,6 +269,12 @@
             </div>
     
             <div class="feedback-form">
+                <!-- حقل الاسم الكامل -->
+                <div class="form-group">
+                    <label for="full-name">الاسم الكامل:</label>
+                    <input type="text" id="full-name" placeholder="ادخل اسمك الكامل" required>
+                </div>
+                
                 <textarea id="comment" rows="5" placeholder="اكتب تعليقك هنا..." required></textarea>
                 <div class="form-group">
                     <label for="rating">تقييم المنصة:</label>
@@ -300,7 +311,10 @@
         </div>
     </section>
     
-    <section class="footer">
+    
+    
+    
+    <section class="footer" id="footer">
         <div class="container">
             <div class="contact-info">
                 <p>Email: <a href="mailto:nbrasmg@gmail.com">nbrasmg@gmail.com</a></p>

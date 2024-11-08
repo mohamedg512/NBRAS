@@ -7,6 +7,24 @@
     <title>التسجيل</title>
     <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* إضافة التنسيق لجعل الرسالة تظهر في الأعلى */
+        #message {
+            display: none;
+            position: fixed;
+            top: 0; /* محاذاة إلى الأعلى */
+            left: 50%;
+            transform: translateX(-50%); /* محاذاة أفقياً إلى المنتصف */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 1.2em;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000; /* التأكد من ظهور الرسالة فوق المحتوى */
+        }
+    </style>
 </head>
 
 <body>
@@ -40,20 +58,97 @@
                     <i class="icon fas fa-globe"></i>
                     <select id="country" required>
                         <option value="" disabled selected>اختر الدولة</option>
+                        <!-- قائمة الدول العربية والدول الأخرى -->
                         <option value="Algeria">الجزائر</option>
-                        <option value="Morocco">المغرب</option>
-                        <option value="Tunisia">تونس</option>
-                        <option value="Egypt">مصر</option>
-                        <option value="Saudi Arabia">السعودية</option>
-                        <option value="UAE">الإمارات</option>
-                        <!-- يمكن إضافة المزيد من الدول حسب الحاجة -->
+                        <option value="Bahrain">البحرين</option>
+                        <option value="Comoros">جزر القمر</option>
+<option value="Djibouti">جيبوتي</option>
+<option value="Egypt">مصر</option>
+<option value="Iraq">العراق</option>
+<option value="Jordan">الأردن</option>
+<option value="Kuwait">الكويت</option>
+<option value="Lebanon">لبنان</option>
+<option value="Libya">ليبيا</option>
+<option value="Mauritania">موريتانيا</option>
+<option value="Morocco">المغرب</option>
+<option value="Oman">عُمان</option>
+<option value="Palestine">فلسطين</option>
+<option value="Qatar">قطر</option>
+<option value="Saudi Arabia">السعودية</option>
+<option value="Somalia">الصومال</option>
+<option value="Sudan">السودان</option>
+<option value="Syria">سوريا</option>
+<option value="Tunisia">تونس</option>
+<option value="UAE">الإمارات</option>
+<option value="Yemen">اليمن</option>
+
+<!-- Global Countries -->
+<option value="Afghanistan">Afghanistan</option>
+<option value="Albania">Albania</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Belgium">Belgium</option>
+<option value="Bolivia">Bolivia</option>
+<option value="Brazil">Brazil</option>
+<option value="Brunei">Brunei</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Canada">Canada</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Colombia">Colombia</option>
+<option value="Cuba">Cuba</option>
+<option value="Denmark">Denmark</option>
+<option value="Ecuador">Ecuador</option>
+<option value="Estonia">Estonia</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="Germany">Germany</option>
+<option value="Greece">Greece</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran">Iran</option>
+<option value="Ireland">Ireland</option>
+<option value="Italy">Italy</option>
+<option value="Japan">Japan</option>
+<option value="Kenya">Kenya</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Mexico">Mexico</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Norway">Norway</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Romania">Romania</option>
+<option value="Russia">Russia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Korea">South Korea</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Thailand">Thailand</option>
+<option value="Turkey">Turkey</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="Venezuela">Venezuela</option>
+<option value="Vietnam">Vietnam</option>
+                        <!-- إضافة المزيد من الدول حسب الحاجة -->
                     </select>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
             </div>
-
-           
 
             <!-- حقل اختيار الدورة -->
             <div class="field course">
@@ -62,13 +157,14 @@
                     <select id="course" required>
                         <option value="" disabled selected>اختر الدورة</option>
                         <option value="cooking">دورة الطهي الاحترافي</option>
-                        <option value="graphic-design">دورة تصميم الجرافيك</option>
                         <option value="web-development">دورة تطوير المواقع الإلكترونية</option>
                         <option value="programming">دورة البرمجة الأساسية</option>
                         <option value="digital-marketing">دورة التسويق الرقمي</option>
-                        <option value="quran">دورة تعليم القرآن الكريم</option>
+                        <option value="quran">دورة تعلم القرآن الكريم</option>
                         <option value="advanced-reading">دورة القراءة المتقدمة</option>
                         <option value="creative-writing">دورة الكتابة الإبداعية</option>
+                        <option value="graphic-design">دورة تصميم الجرافيك</option>
+                        <!-- إضافة المزيد من الدورات حسب الحاجة -->
                     </select>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
@@ -95,15 +191,28 @@
                 <div class="error error-txt"></div>
             </div>
 
-            
-
-            <input type="submit" value="التسجيل">
+            <input type="submit" value="التسجيل" onclick="showMessage(event)">
 
             <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
         </form>
     </div>
 
+    <!-- مكان عرض الرسالة -->
+    <div id="message">
+        شكرًا لتسجيلك في منصتنا. لا داعي للقلق، سيتواصل معك فريق العمل قريبًا لإتمام الإجراءات اللازمة ومساعدتك في أي استفسار قد يكون لديك. نحن هنا لخدمتك!
+    </div>
+
     <script src="script.js"></script> <!-- رابط ملف JavaScript -->
+    <script>
+        function showMessage(event) {
+            event.preventDefault();  // منع تقديم النموذج بشكل افتراضي
+            var messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'block'; // إظهار الرسالة
+            setTimeout(function() {
+                messageDiv.style.display = 'none'; // إخفاء الرسالة بعد 5 ثواني
+            }, 5000);
+        }
+    </script>
 </body>
 
 </html>

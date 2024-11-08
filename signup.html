@@ -7,6 +7,24 @@
     <title>التسجيل</title>
     <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* إضافة التنسيق لجعل الرسالة تظهر في الأعلى */
+        #message {
+            display: none;
+            position: fixed;
+            top: 0; /* محاذاة إلى الأعلى */
+            left: 50%;
+            transform: translateX(-50%); /* محاذاة أفقياً إلى المنتصف */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 1.2em;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000; /* التأكد من ظهور الرسالة فوق المحتوى */
+        }
+    </style>
 </head>
 
 <body>
@@ -59,13 +77,28 @@
                 <div class="error error-txt">الرجاء رفع السيرة الذاتية بصيغة PDF أو Word</div>
             </div>
 
-            <input type="submit" value="التسجيل">
+            <input type="submit" value="التسجيل" onclick="showMessage(event)">
 
             <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
         </form>
     </div>
 
+    <!-- مكان عرض الرسالة -->
+    <div id="message">
+        شكرًا لتسجيلك في منصتنا. لا داعي للقلق، سيتواصل معك فريق العمل قريبًا لإتمام الإجراءات اللازمة ومساعدتك في أي استفسار قد يكون لديك. نحن هنا لخدمتك!
+    </div>
+
     <script src="script.js"></script> <!-- رابط ملف JavaScript -->
+    <script>
+        function showMessage(event) {
+            event.preventDefault();  // منع تقديم النموذج بشكل افتراضي
+            var messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'block'; // إظهار الرسالة
+            setTimeout(function() {
+                messageDiv.style.display = 'none'; // إخفاء الرسالة بعد 5 ثواني
+            }, 5000);
+        }
+    </script>
 </body>
 
 </html>
