@@ -1,7 +1,7 @@
 /* خلفية الصفحة المتحركة */
 body {
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../resources/img/BG.png);
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
     background-size: 80% 100%;
     animation: gradient 15s ease infinite;
     margin: 0;
