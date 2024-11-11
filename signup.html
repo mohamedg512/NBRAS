@@ -7,35 +7,18 @@
     <title>التسجيل</title>
     <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* إضافة التنسيق لجعل الرسالة تظهر في الأعلى */
-        #message {
-            display: none;
-            position: fixed;
-            top: 0; /* محاذاة إلى الأعلى */
-            left: 50%;
-            transform: translateX(-50%); /* محاذاة أفقياً إلى المنتصف */
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            text-align: center;
-            font-size: 1.2em;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000; /* التأكد من ظهور الرسالة فوق المحتوى */
-        }
-    </style>
+    
 </head>
 
 <body>
     <div class="wrapper">
         <header>التسجيل</header>
 
-        <form id="signup-form">
+        <form id="signup-form" action="signup.php" method="POST" enctype="multipart/form-data">
             <div class="field email">
                 <div class="input-area">
                     <i class="icon fas fa-envelope"></i>
-                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -44,7 +27,7 @@
             <div class="field phone">
                 <div class="input-area">
                     <i class="icon fas fa-phone-alt"></i>
-                    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -53,7 +36,7 @@
             <div class="field password">
                 <div class="input-area">
                     <i class="icon fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="كلمة المرور" required>
+                    <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -62,7 +45,7 @@
             <div class="field confirm-password">
                 <div class="input-area">
                     <i class="icon fas fa-lock"></i>
-                    <input type="password" id="confirm-password" placeholder="تأكيد كلمة المرور" required>
+                    <input type="password" id="confirm-password"  placeholder="تأكيد كلمة المرور" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -71,34 +54,22 @@
             <div class="field file-upload">
                 <div class="input-area">
                     <i class="icon fas fa-upload"></i>
-                    <input type="file" id="cv" required>
+                    <input type="file" id="cv" name="cv" >
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt">الرجاء رفع السيرة الذاتية بصيغة PDF أو Word</div>
             </div>
 
-            <input type="submit" value="التسجيل" onclick="showMessage(event)">
+            <input type="submit" value="التسجيل" >
 
             <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
         </form>
     </div>
 
-    <!-- مكان عرض الرسالة -->
-    <div id="message">
-        شكرًا لتسجيلك في منصتنا. لا داعي للقلق، سيتواصل معك فريق العمل قريبًا لإتمام الإجراءات اللازمة ومساعدتك في أي استفسار قد يكون لديك. نحن هنا لخدمتك!
-    </div>
+   
 
     <script src="script.js"></script> <!-- رابط ملف JavaScript -->
-    <script>
-        function showMessage(event) {
-            event.preventDefault();  // منع تقديم النموذج بشكل افتراضي
-            var messageDiv = document.getElementById('message');
-            messageDiv.style.display = 'block'; // إظهار الرسالة
-            setTimeout(function() {
-                messageDiv.style.display = 'none'; // إخفاء الرسالة بعد 5 ثواني
-            }, 5000);
-        }
-    </script>
+    
 </body>
 
 </html>

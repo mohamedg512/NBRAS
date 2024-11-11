@@ -7,36 +7,19 @@
     <title>التسجيل</title>
     <link rel="stylesheet" href="sign.css"> <!-- رابط ملف التنسيق CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* إضافة التنسيق لجعل الرسالة تظهر في الأعلى */
-        #message {
-            display: none;
-            position: fixed;
-            top: 0; /* محاذاة إلى الأعلى */
-            left: 50%;
-            transform: translateX(-50%); /* محاذاة أفقياً إلى المنتصف */
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            text-align: center;
-            font-size: 1.2em;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 1000; /* التأكد من ظهور الرسالة فوق المحتوى */
-        }
-    </style>
+   
 </head>
 
 <body>
     <div class="wrapper">
         <header>التسجيل</header>
 
-        <form id="signup-form">
+        <form id="signup-form" action="signelevent.php" method="POST">
             <!-- حقل البريد الإلكتروني -->
             <div class="field email">
                 <div class="input-area">
                     <i class="icon fas fa-envelope"></i>
-                    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+                    <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -46,7 +29,7 @@
             <div class="field phone">
                 <div class="input-area">
                     <i class="icon fas fa-phone-alt"></i>
-                    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -56,7 +39,7 @@
             <div class="field education-level">
                 <div class="input-area">
                     <i class="icon fas fa-school"></i>
-                    <select id="education-level" required>
+                    <select id="education-level" name="education-level" required>
                         <option value="" disabled selected>اختر المستوى التعليمي</option>
                         <option value="Elementary">ابتدائي</option>
                         <option value="Middle 1">السنة 1 متوسط</option>
@@ -77,23 +60,23 @@
                 <label for="subjects">اختر المــواد</label>
                 <div class="subjects-list">
                     <div class="subject-item">
-                        <input type="checkbox" id="sciences" name="subjects" value="Sciences">
+                        <input type="checkbox" id="sciences" name="subjects[]" value="Sciences">
                         <label for="sciences">علوم الطبيعة والحياة</label>
                     </div>
                     <div class="subject-item">
-                        <input type="checkbox" id="mathematics" name="subjects" value="Mathematics">
+                        <input type="checkbox" id="mathematics" name="subjects[]" value="Mathematics">
                         <label for="mathematics">الرياضيات</label>
                     </div>
                     <div class="subject-item">
-                        <input type="checkbox" id="physics" name="subjects" value="Physics">
+                        <input type="checkbox" id="physics" name="subjects[]" value="Physics">
                         <label for="physics">الفيزياء</label>
                     </div>
                     <div class="subject-item">
-                        <input type="checkbox" id="english" name="subjects" value="English">
+                        <input type="checkbox" id="english" name="subjects[]" value="English">
                         <label for="english">الإنجليزية</label>
                     </div>
                     <div class="subject-item">
-                        <input type="checkbox" id="arabic" name="subjects" value="Arabic">
+                        <input type="checkbox" id="arabic" name="subjects[]" value="Arabic">
                         <label for="arabic">اللغة العربية</label>
                     </div>
                 </div>
@@ -103,7 +86,7 @@
             <div class="field password">
                 <div class="input-area">
                     <i class="icon fas fa-lock"></i>
-                    <input type="password" id="password" placeholder="كلمة المرور" required>
+                    <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
                 <div class="error error-txt"></div>
@@ -120,28 +103,17 @@
             </div>
 
             <!-- زر التسجيل مع الحدث onclick -->
-            <input type="submit" value="التسجيل" onclick="showMessage(event)">
+            <input type="submit" value="التسجيل" >
 
             <div class="sign-txt">لديك حساب؟ <a href="index1.html">تسجيل الدخول</a></div>
         </form>
 
         <!-- مكان عرض الرسالة -->
-        <div id="message">
-            شكرًا لتسجيلك في منصتنا. لا داعي للقلق، سيتواصل معك فريق العمل قريبًا لإتمام الإجراءات اللازمة ومساعدتك في أي استفسار قد يكون لديك. نحن هنا لخدمتك!
-        </div>
+        
     </div>
 
     <script src="script.js"></script> <!-- رابط ملف JavaScript -->
-    <script>
-        function showMessage(event) {
-            event.preventDefault();  // منع تقديم النموذج بشكل افتراضي
-            var messageDiv = document.getElementById('message');
-            messageDiv.style.display = 'block'; // إظهار الرسالة
-            setTimeout(function() {
-                messageDiv.style.display = 'none'; // إخفاء الرسالة بعد 5 ثواني
-            }, 5000);
-        }
-    </script>
+   
 </body>
 
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>إنشاء حساب</h2>
+        <form action="registerdawa.php" method="POST">
+            <div class="input-field">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="input-field">
+                <label for="phone">رقم الهاتف</label>
+                <input type="text" name="phone" id="phone" required>
+            </div>
+            <div class="input-field">
+                <label for="country">الدولة</label>
+                <input type="text" name="country" id="country" required>
+            </div>
+            <div class="input-field">
+                <label for="password">كلمة المرور</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="input-field">
+                <label for="confirm-password">تأكيد كلمة المرور</label>
+                <input type="password" name="confirm-password" id="confirm-password" required>
+            </div>
+            <div class="input-field">
+                <input type="submit" value="إنشاء حساب">
+            </div>
+        </form>
+        <div class="login-link">
+            لديك حساب؟ <a href="logdawa.html">تسجيل الدخول</a>
+        </div>
+    </div>
+</body>
+</html>
